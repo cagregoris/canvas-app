@@ -5,7 +5,7 @@ const pool = new Pool({
   password: "labber",
   host: "localhost",
   port: "5432",
-  database: "PaintApp"
+  database: "canvas_app"
 });
 
 module.exports = pool;
