@@ -1,7 +1,8 @@
-import './App.css';
-
 import { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+// Router-Dom
 import { 
   BrowserRouter as Router,
   Route,
@@ -10,7 +11,6 @@ import {
 } from "react-router-dom";
 
 // Components
-
 import Home from './components/Home';
 import About from './components/About';
 import Login from './components/Login';
@@ -19,6 +19,8 @@ import Canvas from './components/Canvas';
 import PrivateNav from './components/Nav/PrivateNav';
 import PublicNav from './components/Nav/PublicNav';
 
+// Styles
+import './styles/App.css';
 
 function App() {
 
@@ -55,6 +57,7 @@ function App() {
     <div className="App">
 
       <Router>
+        <ToastContainer />
 
         {isAuthenticated ? (
           <PrivateNav setAuth={setAuth} />

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import {toast} from "react-toastify";
+
 function Register({setAuth}) {
 
   const [inputs, setInputs] = useState({
@@ -31,9 +33,22 @@ function Register({setAuth}) {
 
       const parseRes = await response.json();
 
-      localStorage.setItem("token", parseRes.jwtToken)
+      if (parseRes.jwtToken) {
+        localStorage.setItem("token", parseRes.jwtToken)
+  
+        setAuth(true)
 
-      setAuth(true)
+        toast.success("You are registered!", {
+          icon: "🎨"
+        })
+
+      } else {
+        setAuth(false);
+        toast.error(parseRes, {
+          icon: "🤔",
+        });
+      }
+
 
 
     } catch (err) {
