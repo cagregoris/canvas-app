@@ -6,6 +6,8 @@ function PublicNav() {
     <div>
       <h1>PUBLIC NAV</h1>
       <Link to="/login">LOGIN</Link>
+      <br></br>
+      <Link to="/register">REGISTER</Link>
     </div>
   )
 }
