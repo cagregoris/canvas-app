@@ -2,10 +2,11 @@ const router = require("express").Router();
 const pool = require("../db/db");
 const bcrypt = require("bcrypt");
 const jwtGenerator = require("../utils/jwtGenerator");
+const validInfo = require("../middleware/validInfo");
 
 // Registration
 
-router.post("/register", async (req, res) => {
+router.post("/register", validInfo, async (req, res) => {
   try {
 
     // 1. Destructure the req.body (first name, last name, email, password)
@@ -39,9 +40,9 @@ router.post("/register", async (req, res) => {
 
     // 5. Generate our jwt token
 
-    const token = jwtGenerator(newUser.rows[0].user_id);
+    const jwtToken = jwtGenerator(newUser.rows[0].user_id);
 
-    res.json({ token })
+    return res.json({ jwtToken });
 
 
   } catch (err) {
@@ -54,7 +55,7 @@ router.post("/register", async (req, res) => {
 
 // Login
 
-router.post("/login", async (req, res) => {
+router.post("/login", validInfo, async (req, res) => {
   try {
 
     // 1. Destructure the req.body
@@ -84,9 +85,9 @@ router.post("/login", async (req, res) => {
 
     // 4. Give them the jwt token
 
-    const token = jwtGenerator(user.rows[0].user_id);
+    const jwtToken = jwtGenerator(user.rows[0].user_id);
 
-    res.json({ token })
+    return res.json({ jwtToken });
 
 
     
