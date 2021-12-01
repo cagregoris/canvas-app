@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import {Link} from "react-router-dom";
 
 function PrivateNav({setAuth}) {
 
@@ -42,9 +43,11 @@ function PrivateNav({setAuth}) {
       <div className="nav--left-side">
 
       </div>
-      <div className="nav--middle">
 
+      <div className="nav--middle">
+        <Link to="/canvas">Blank Canvas</Link>
       </div>
+
       <div className="nav--right-side">
         <a>Welcome, {name}!</a>
         <button onClick={(e) => logout(e)}>Logout</button>

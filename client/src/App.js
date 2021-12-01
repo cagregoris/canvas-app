@@ -1,6 +1,6 @@
 import './App.css';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { 
   BrowserRouter as Router,
@@ -27,6 +27,29 @@ function App() {
   const setAuth = boolean => {
     setIsAuthenticated(boolean)
   };
+
+  async function isAuth() {
+    try {
+
+      const response = await fetch("http://localhost:5000/auth/verify", {
+        method: "GET",
+        headers: { token: localStorage.token }
+      });
+
+      const parseRes = await response.json();
+
+      parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false)
+
+      console.log("token verified?", parseRes)
+      
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
+
+  useEffect(() => {
+    isAuth()
+  })
 
   return (
     <div className="App">
