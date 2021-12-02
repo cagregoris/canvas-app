@@ -21,6 +21,7 @@ import PublicNav from './components/Nav/PublicNav';
 
 // Styles
 import './styles/App.css';
+import './styles/nav.css'
 
 function App() {
 

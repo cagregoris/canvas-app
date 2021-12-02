@@ -39,18 +39,19 @@ function PrivateNav({setAuth}) {
   return (
     
     <div className="nav">
-      <h1>PRIVATE NAV</h1>
       <div className="nav--left-side">
-
+        <Link to="/home" className="nav-bar-link">LOGO</Link>
       </div>
 
-      <div className="nav--middle">
-        <Link to="/canvas">Blank Canvas</Link>
+      <div className="nav--middle-private">
+        <Link to="/home" className="nav-bar-link">Home</Link>
+        <Link to="/about" className="nav-bar-link">About</Link>
+        <Link to="/canvas" className="nav-bar-link">Blank Canvas</Link>
       </div>
 
-      <div className="nav--right-side">
-        <a>Welcome, {name}!</a>
-        <button onClick={(e) => logout(e)}>Logout</button>
+      <div className="nav--right-side-private">
+        <a id="welcome">Welcome, {name}!</a>
+        <button className="btn-main" onClick={(e) => logout(e)}>Logout</button>
       </div>
     </div>
   )

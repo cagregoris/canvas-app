@@ -1,0 +1,32 @@
+.profile-submenu {
+  width: 10rem;
+  position: absolute;
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  top: 100px;
+}
+
+.profile-submenu li {
+  background: plum;
+  cursor: pointer;
+}
+
+.profile-submenu-clicked {
+  display: none;
+}
+
+.submenu-item {
+  display: block;
+  width: 80%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  padding: 16px;
+  font-weight: 700;
+}
+
+.submenu-item:hover {
+  background: purple;
+}
