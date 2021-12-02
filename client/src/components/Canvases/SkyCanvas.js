@@ -1,13 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 
-import '../styles/canvas.css'
+import './canvas.css'
 
 const colors = [
-  {
-    name: "select a color",
-    ref: "#000000"
-  },
   {
     name: "red",
     ref: "#D92C20"
@@ -69,7 +65,7 @@ const lineWidth = [
   }
 ]
 
-function Canvas() {
+function SkyCanvas() {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
 
@@ -92,6 +88,8 @@ function Canvas() {
     context.strokeStyle = selectedColor;
     context.lineWidth = selectedSize;
     contextRef.current = context;
+    context.fillStyle = "white"
+    context.fillRect(0, 0, canvas.width, canvas.height);
   }, []);
 
   const download = async () => {
@@ -106,6 +104,7 @@ function Canvas() {
 
   const clear = () => {
     contextRef.current.clearRect(0, 0, contextRef.current.canvas.width, contextRef.current.canvas.height)
+    contextRef.current.fillRect(0, 0, contextRef.current.canvas.width, contextRef.current.canvas.height)
   }
 
   const startDrawing = ({nativeEvent}) => {
@@ -133,6 +132,9 @@ function Canvas() {
 
   return (
     <div className="container-painting">
+
+      
+
       <div className="painting">
 
         <canvas className="canvas"
@@ -144,7 +146,7 @@ function Canvas() {
 
 </div> 
         <div className="buttons-painting"> 
-          <select
+          {/* <select
             className="btn-paint"
             value={selectedColor}
             onChange={(e) => setSelectedColor(e.target.value)}
@@ -154,7 +156,14 @@ function Canvas() {
                 color => <option key={color.name} value={color.ref}>{color.name}</option>
                 )
               }        
-          </select>
+          </select> */}
+          
+          {
+            colors.map(
+              color => <button onClick={(e) => setSelectedColor(e.target.value)} value={color.ref}>{color.name}</button>
+              )
+          }
+         
           &nbsp;
           &nbsp;
           <select
@@ -179,4 +188,4 @@ function Canvas() {
     </div>
      )
     }
-    export default Canvas;
+    export default SkyCanvas;

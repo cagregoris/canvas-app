@@ -15,9 +15,10 @@ import Home from './components/Home';
 import About from './components/About';
 import Login from './components/Login';
 import Register from './components/Register';
-import Canvas from './components/Canvas';
+import Canvas from './components/Canvases/EarthCanvas';
 import PrivateNav from './components/Nav/PrivateNav';
 import PublicNav from './components/Nav/PublicNav';
+import Container from './components/Canvases/Container';
 
 // Styles
 import './styles/App.css';
@@ -70,7 +71,7 @@ function App() {
           <Route exact path = "/" element = { <Home /> } />
           <Route exact path = "/login" element = { !isAuthenticated ? (<Login setAuth={setAuth} />) : (<Navigate to="/" />) } />
           <Route exact path = "/register" element = { !isAuthenticated ?  (<Register setAuth={setAuth} />) : (<Navigate to="/" />) } />
-          <Route exact path = "/canvas" element = { isAuthenticated ? (<Canvas setAuth={setAuth} />) : (<Navigate to="/" />) } />
+          <Route exact path = "/canvas" element = { isAuthenticated ? (<Container setAuth={setAuth} />) : (<Navigate to="/" />) } />
           <Route exact path = "/about" element = { <About /> } />
           <Route exact path = "/home" element = { <Home /> } />
         </Routes>

@@ -11,10 +11,7 @@ function PublicNav() {
 <>
   <div className="nav">
     <div className="nav--left-side">
-      <Link to="/home" className="nav-bar-link">LOGO</Link>
-    </div>
-
-    <div className="nav--middle">
+      <Link to="/home" className="nav-bar-link-logo">LOGO</Link>
       <Link to="/home" className="nav-bar-link">Home</Link>
       <Link to="/about" className="nav-bar-link">About</Link>
     </div>
