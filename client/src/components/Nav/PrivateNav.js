@@ -40,7 +40,7 @@ function PrivateNav({setAuth}) {
     
     <div className="nav">
       <div className="nav--left-side">
-        <Link to="/home" className="nav-bar-link-logo">LOGO</Link>
+        <Link to="/home" className="nav-bar-link-logo">MINDFUL ART</Link>
         <Link to="/home" className="nav-bar-link">Home</Link>
         <Link to="/about" className="nav-bar-link">About</Link>
         <Link to="/canvas" className="nav-bar-link">Blank Canvas</Link>

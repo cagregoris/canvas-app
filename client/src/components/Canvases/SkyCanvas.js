@@ -28,7 +28,7 @@ const colors = [
 const lineWidth = [
   {
     name: "select brush size",
-    value: 1
+    value: 3
   },
   {
     name: "x-small",

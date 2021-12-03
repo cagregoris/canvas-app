@@ -28,7 +28,7 @@ const colors = [
 const lineWidth = [
   {
     name: "select brush size",
-    value: 1
+    value: 3
   },
   {
     name: "x-small",
@@ -118,7 +118,7 @@ function EarthCanvas() {
   }
 
   return (
-    <div className="container-painting" style={{background: `url(${Background})`, backgroundSize: "100%"}}>
+    <div  className="container-painting" style={{background: `url(${Background})`, backgroundSize: "100%"}}>
 
       
 

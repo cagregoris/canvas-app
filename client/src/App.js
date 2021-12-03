@@ -23,6 +23,9 @@ import Container from './components/Canvases/Container';
 // Styles
 import './styles/App.css';
 import './styles/nav.css'
+import OceanCanvas from './components/Canvases/OceanCanvas';
+import EarthCanvas from './components/Canvases/EarthCanvas';
+import SkyCanvas from './components/Canvases/SkyCanvas';
 
 function App() {
 
@@ -73,6 +76,9 @@ function App() {
           <Route exact path = "/register" element = { !isAuthenticated ?  (<Register setAuth={setAuth} />) : (<Navigate to="/" />) } />
           <Route exact path = "/canvas" element = { isAuthenticated ? (<Container setAuth={setAuth} />) : (<Navigate to="/" />) } />
           <Route exact path = "/about" element = { <About /> } />
+          <Route exact path = "/canvas/earth" element = { <EarthCanvas /> } />
+          <Route exact path = "/canvas/ocean" element = { <OceanCanvas /> } />
+          <Route exact path = "/canvas/sky" element = { <SkyCanvas /> } />
           <Route exact path = "/home" element = { <Home /> } />
         </Routes>
       </Router>

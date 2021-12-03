@@ -1,13 +1,15 @@
 .nav {
-  background-color: black;
+  background-color: transparent;
+  width: 100%;
   height: 100px;
-  color: white;
+  color: #726E5F;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
+  position: fixed;
 }
 
 /* .nav--middle {
@@ -27,7 +29,7 @@
 
 
 .nav--right-side {
-  width: 150px;
+  width: 250px;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -42,7 +44,7 @@
 
 .nav-bar-link-logo {
   text-decoration: none;
-  color: white;
+  color: #726E5F;
   font-size: 20px;
   padding-right: 100px;
   padding-left: 20px;
@@ -50,19 +52,26 @@
 
 .nav-bar-link {
   text-decoration: none;
-  color: white;
   font-size: 20px;
   padding: 20px;
+  color: #726E5F;
 }
 
 .nav-bar-link:hover {
-  color: plum;
+  color: #96938b;
 }
 
 .btn-main {
-  background-color: white;
+  background-color: transparent;
   padding: 10px;
   cursor: pointer;
+  border: none;
+  color: #726E5F;
+  font-size: 20px;
+}
+
+.btn-main:hover {
+  color: #96938b;
 }
 
 .fa-user {

@@ -37,10 +37,6 @@ function Login({setAuth}) {
   
         setAuth(true)
 
-        toast.success("You are logged in!", {
-          icon: "🎨"
-        })
-
       } else {
         setAuth(false);
         toast.error(parseRes, {
@@ -57,7 +53,7 @@ function Login({setAuth}) {
 
 
   return (
-    <div>
+    <div className="page-div">
       <h1>LOGIN</h1>
       <form onSubmit={onSubmitForm}>
         <input type="email" name="email" placeholder="email" value={email} onChange={e => onChange(e)} />

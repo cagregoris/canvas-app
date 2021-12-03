@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.page-div {
+  padding-top: 100px;
+  background-color: #EDECE8;
+  height: 100vh;
+}

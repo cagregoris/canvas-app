@@ -58,7 +58,7 @@ function Register({setAuth}) {
 
 
   return (
-    <div>
+    <div className="page-div">
       <h1>REGISTER</h1>
       <form onSubmit={onSubmitForm} >
         <input type="text" name="first_name" placeholder="First Name" value={first_name} onChange={e => onChange(e)} />
