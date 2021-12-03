@@ -9,7 +9,6 @@
 }
 
 .profile-submenu li {
-  background: plum;
   cursor: pointer;
 }
 
@@ -22,11 +21,14 @@
   width: 80%;
   height: 100%;
   text-decoration: none;
-  color: white;
+  color: #4B462A;
   padding: 16px;
-  font-weight: 700;
+  font-size: 17px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
 .submenu-item:hover {
-  background: purple;
+  background: rgba(150, 147, 139, 0.4);
 }
