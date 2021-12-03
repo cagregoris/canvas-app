@@ -1,46 +1,33 @@
 import React, { useRef, useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
+import Background from './sky.jpg';
 
 import './canvas.css'
 
 const colors = [
   {
-    name: "red",
-    ref: "#D92C20"
+    ref: "#A03E6E"
   },
   {
-    name: "pink",
-    ref: "#F789A7"
+    ref: "#E85155"
   },
   {
-    name: "orange",
-    ref: "#FC813E"
+    ref: "#EDB7D1"
   },
   {
-    name: "yellow",
-    ref: "#F5D56A"
+    ref: "#E18838"
   },
   {
-    name: "green",
-    ref: "#4CAF50"
+    ref: "#E3B17C"
   },
   {
-    name: "blue",
-    ref: "#12BFEC"
-  },
-  {
-    name: "purple",
-    ref: "#7A55BD"
-  },
-  {
-    name: "black",
-    ref: "#000000"
+    ref: "#97571D"
   }
 ]
 
 const lineWidth = [
   {
-    name: "select size",
+    name: "select brush size",
     value: 1
   },
   {
@@ -80,7 +67,6 @@ function SkyCanvas() {
     canvas.height = 600 * 2
     canvas.style.width = '600px'
     canvas.style.height = '600px'
-    canvas.style.border = "2px solid #000";
 
     const context = canvas.getContext('2d')
     context.scale(2, 2)
@@ -131,7 +117,7 @@ function SkyCanvas() {
   }
 
   return (
-    <div className="container-painting">
+    <div className="container-painting" style={{background: `url(${Background})`, backgroundSize: "100%"}}>
 
       
 
@@ -144,28 +130,28 @@ function SkyCanvas() {
          ref={canvasRef}
         />
 
-</div> 
+      </div> 
+
         <div className="buttons-painting"> 
-          {/* <select
-            className="btn-paint"
-            value={selectedColor}
-            onChange={(e) => setSelectedColor(e.target.value)}
-          >
-            {
-              colors.map(
-                color => <option key={color.name} value={color.ref}>{color.name}</option>
-                )
-              }        
-          </select> */}
-          
+        <div className="palette-div" style={{backgroundColor:"#EFE5DD"}}>
           {
             colors.map(
-              color => <button onClick={(e) => setSelectedColor(e.target.value)} value={color.ref}>{color.name}</button>
+              color => <button 
+                className="btn-palette" 
+                onClick={(e) => setSelectedColor(e.target.value)} 
+                value={color.ref}
+                style={{backgroundColor:`${color.ref}`}}
+                >
+
+                </button>
               )
           }
          
+        </div>
           &nbsp;
           &nbsp;
+
+        <div>
           <select
             className="btn-paint"
             value={selectedSize}
@@ -177,12 +163,17 @@ function SkyCanvas() {
                 )
               }        
           </select>
+        </div>
           &nbsp;
           &nbsp;
+
+        <div>
           <button className="btn-paint" onClick={clear}>Clear</button>
           &nbsp;
           &nbsp;
           <button className="btn-paint" onClick={download}>Download</button>
+        </div>
+          
         </div>
             <Link to="/painting"></Link>
     </div>

@@ -3,16 +3,14 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 100vh;
 }
 
 .buttons-painting {
-  padding: 20px;
+  padding: 70px;
 }
 
 .palette-div {
-  /* height: 110px; */
-  /* width: auto; */
   display: grid;
   grid-template-columns: 50px 50px 50px;
   grid-template-rows: 60px 60px; 
@@ -25,13 +23,14 @@
 }
 
 .btn-paint {
-  background-color: white;
-  border: solid 2px;
-  color: black;
+  background-color: black;
+  border: none;
+  color: white;
   padding: 7px 10px;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
+  border-radius: 10px;
 } 
 
 .btn-palette {

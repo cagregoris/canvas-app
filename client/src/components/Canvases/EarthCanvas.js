@@ -27,7 +27,7 @@ const colors = [
 
 const lineWidth = [
   {
-    name: "select size",
+    name: "select brush size",
     value: 1
   },
   {
@@ -67,7 +67,7 @@ function EarthCanvas() {
     canvas.height = 600 * 2
     canvas.style.width = '600px'
     canvas.style.height = '600px'
-    canvas.style.border = "2px solid #000";
+    // canvas.style.border = "2px solid #000";
 
     const context = canvas.getContext('2d')
     context.scale(2, 2)

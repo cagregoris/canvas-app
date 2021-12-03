@@ -4,7 +4,8 @@ import EarthCanvas from './EarthCanvas';
 import OceanCanvas from './OceanCanvas';
 import SkyCanvas from './SkyCanvas';
 
-// import "./earthCanvas.css"
+// stylesheets
+import "./container.css"
 
 function Container() {
 
@@ -12,14 +13,24 @@ function Container() {
   console.log("selected theme", selectedTheme);
 
   return (
-    <div>
-      <div>
-        <span>Select a theme:</span>
-      </div>
+    <div >
       <div className="themes">
-        <button onClick={() => setSelectedTheme("earth")} >earth</button>
-        <button onClick={() => setSelectedTheme("ocean")} >ocean</button>
-        <button onClick={() => setSelectedTheme("sky")} >sky</button>
+        <span>Select a theme:</span>
+        <div className="btn-theme">
+          <button className="btn-earth" onClick={() => setSelectedTheme("earth")} >earth</button>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          <button className="btn-ocean" onClick={() => setSelectedTheme("ocean")} >ocean</button>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          <button className="btn-sky" onClick={() => setSelectedTheme("sky")} >sky</button>
+        </div>
+      </div>
+      <div className="canvases">
         {
           (selectedTheme === "earth") && <EarthCanvas />
         }
@@ -31,13 +42,7 @@ function Container() {
         }
       </div>
 
-      <div>
-       
-        
-      </div>
-
-      
-    </div>
+  </div>
   )
 }
 

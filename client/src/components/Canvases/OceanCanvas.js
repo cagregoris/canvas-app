@@ -1,46 +1,33 @@
 import React, { useRef, useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
+import Background from './ocean.jpg';
 
 import './canvas.css'
 
 const colors = [
   {
-    name: "red",
-    ref: "#D92C20"
+    ref: "#D7E9F3"
   },
   {
-    name: "pink",
-    ref: "#F789A7"
+    ref: "#6EB8C3"
   },
   {
-    name: "orange",
-    ref: "#FC813E"
+    ref: "#0D7479"
   },
   {
-    name: "yellow",
-    ref: "#F5D56A"
+    ref: "#A7998E"
   },
   {
-    name: "green",
-    ref: "#4CAF50"
+    ref: "#72757A"
   },
   {
-    name: "blue",
-    ref: "#12BFEC"
-  },
-  {
-    name: "purple",
-    ref: "#7A55BD"
-  },
-  {
-    name: "black",
-    ref: "#000000"
+    ref: "#074268"
   }
 ]
 
 const lineWidth = [
   {
-    name: "select size",
+    name: "select brush size",
     value: 1
   },
   {
@@ -80,7 +67,6 @@ function OceanCanvas() {
     canvas.height = 600 * 2
     canvas.style.width = '600px'
     canvas.style.height = '600px'
-    canvas.style.border = "2px solid #000";
 
     const context = canvas.getContext('2d')
     context.scale(2, 2)
@@ -131,11 +117,11 @@ function OceanCanvas() {
   }
 
   return (
-    <div className="container-painting" style={{backgroundColor:"#F2AD86"}}>
+    <div className="container-painting" style={{background: `url(${Background})`, backgroundSize: "100%"}}>
 
       
 
-      <div className="painting" >
+      <div className="painting">
 
         <canvas className="canvas"
          onMouseDown={startDrawing}
@@ -144,28 +130,28 @@ function OceanCanvas() {
          ref={canvasRef}
         />
 
-</div> 
+      </div> 
+
         <div className="buttons-painting"> 
-          {/* <select
-            className="btn-paint"
-            value={selectedColor}
-            onChange={(e) => setSelectedColor(e.target.value)}
-          >
-            {
-              colors.map(
-                color => <option key={color.name} value={color.ref}>{color.name}</option>
-                )
-              }        
-          </select> */}
-          
+        <div className="palette-div" style={{backgroundColor:"#EFE5DD"}}>
           {
             colors.map(
-              color => <button onClick={(e) => setSelectedColor(e.target.value)} value={color.ref}>{color.name}</button>
+              color => <button 
+                className="btn-palette" 
+                onClick={(e) => setSelectedColor(e.target.value)} 
+                value={color.ref}
+                style={{backgroundColor:`${color.ref}`}}
+                >
+
+                </button>
               )
           }
          
+        </div>
           &nbsp;
           &nbsp;
+
+        <div>
           <select
             className="btn-paint"
             value={selectedSize}
@@ -177,12 +163,17 @@ function OceanCanvas() {
                 )
               }        
           </select>
+        </div>
           &nbsp;
           &nbsp;
+
+        <div>
           <button className="btn-paint" onClick={clear}>Clear</button>
           &nbsp;
           &nbsp;
           <button className="btn-paint" onClick={download}>Download</button>
+        </div>
+          
         </div>
             <Link to="/painting"></Link>
     </div>

@@ -1,0 +1,32 @@
+.themes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 30px;
+}
+
+.btn-theme {
+  padding: 30px;
+}
+
+.btn-theme button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.btn-earth:hover {
+  background-color: #CBC5B7;
+}
+
+.btn-ocean:hover {
+  background-color: #BBD0D3;
+}
+
+.btn-sky:hover {
+  background-color: #F5E1DE;
+}
