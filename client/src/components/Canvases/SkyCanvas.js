@@ -117,7 +117,7 @@ function SkyCanvas() {
   }
 
   return (
-    <div className="container-painting" style={{background: `url(${Background})`, backgroundSize: "100%"}}>
+    <div className="container-painting" style={{background: `url(${Background})`, backgroundSize: "150%"}}>
 
       
 

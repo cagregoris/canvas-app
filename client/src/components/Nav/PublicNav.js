@@ -23,11 +23,6 @@ function PublicNav() {
     
     ></i>
     {dropdown && <Dropdown />}
-    
-
-
-      {/* <button className="btn-main"><Link to="/login" style={{textDecoration:"none", color:"black"}}>Login</Link></button>
-      <button className="btn-main"><Link to="/register" style={{textDecoration:"none", color:"black"}}>Register</Link></button> */}
     </div>
   </div>
 </>

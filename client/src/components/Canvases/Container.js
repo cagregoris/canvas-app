@@ -6,6 +6,8 @@ import SkyCanvas from './SkyCanvas';
 // stylesheets
 import "./container.css"
 
+import Background from './background.jpg'
+
 const themes = [
   {
     name: "earth"
@@ -40,7 +42,8 @@ function Container() {
 
   return (
     <div >
-      <div className="themes" >
+      <div className="themes" style={{background: `url(${Background})`, backgroundSize: "150%"}}>
+        <div className="layer">
         <span>Select a theme:</span>
         <div className="btn-theme">
           <button onClick={() => executeScrollEarth()} >earth</button>
@@ -57,6 +60,7 @@ function Container() {
           
 
         </div>
+      </div>
       </div>
       <div className="canvases" ref={myRef}>
         {

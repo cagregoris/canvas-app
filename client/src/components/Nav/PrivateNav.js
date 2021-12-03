@@ -47,7 +47,7 @@ function PrivateNav({setAuth}) {
       </div>
 
       <div className="nav--right-side-private">
-        <a id="welcome">Welcome, {name}!</a>
+        <a id="welcome">Welcome, {name}</a>
         <button className="btn-main" onClick={(e) => logout(e)}>Logout</button>
       </div>
     </div>
