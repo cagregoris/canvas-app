@@ -49,11 +49,13 @@ function Container() {
           <button onClick={() => executeScrollEarth()} >earth</button>
           &nbsp;
           &nbsp;
+          <span>•</span>
           &nbsp;
           &nbsp;
           <button onClick={() => executeScrollOcean()} >ocean</button>
           &nbsp;
           &nbsp;
+          <span>•</span>
           &nbsp;
           &nbsp;
           <button onClick={() => executeScrollSky()} >sky</button>

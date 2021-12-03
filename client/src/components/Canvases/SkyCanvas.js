@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import Background from './sky.jpg';
+import ReactAudioPlayer from 'react-audio-player';
+import soundy from "../../sounds/sky.mp3"
 
 import './canvas.css'
 
@@ -117,23 +119,19 @@ function SkyCanvas() {
   }
 
   return (
-    <div className="container-painting" style={{background: `url(${Background})`, backgroundSize: "150%"}}>
-
-      
-
+    <div  className="container-painting" style={{background: `url(${Background})`, backgroundSize: "100%", height: "900px"}}>
       <div className="painting">
-
         <canvas className="canvas"
          onMouseDown={startDrawing}
          onMouseUp={finishDrawing}
          onMouseMove={draw}
          ref={canvasRef}
         />
-
       </div> 
 
-        <div className="buttons-painting"> 
-        <div className="palette-div" style={{backgroundColor:"#EFE5DD"}}>
+      <div className="buttons-painting"> 
+        <div className="palette-container" style={{backgroundColor:"#EDECE8"}}>
+          <div className="palette-div" >
           {
             colors.map(
               color => <button 
@@ -146,37 +144,38 @@ function SkyCanvas() {
                 </button>
               )
           }
-         
-        </div>
-          &nbsp;
-          &nbsp;
-
-        <div>
+          </div>
+        <div className="palette-options">
           <select
             className="btn-paint"
             value={selectedSize}
             onChange={(e) => setSelectedSize(e.target.value)}
-          >
+            >
             {
               lineWidth.map(
                 size => <option key={size.name} value={size.value}>{size.name}</option>
                 )
               }        
           </select>
+              <br></br>
+          <div>
+            <button className="btn-paint" onClick={clear}>Clear</button>
+            &nbsp;
+            &nbsp;
+            <button className="btn-paint" onClick={download}>Download</button>
+          </div>
         </div>
-          &nbsp;
-          &nbsp;
-
-        <div>
-          <button className="btn-paint" onClick={clear}>Clear</button>
-          &nbsp;
-          &nbsp;
-          <button className="btn-paint" onClick={download}>Download</button>
+      </div>  
+        <ReactAudioPlayer
+          src={soundy}
+          autoPlay={true}
+          controls={true}
+          onPlay={e => console.log("onPlay")}
+        />
         </div>
-          
-        </div>
-            <Link to="/painting"></Link>
+      <div>
     </div>
-     )
+  </div>
+     )    
     }
     export default SkyCanvas;

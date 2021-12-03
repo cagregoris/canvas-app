@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 110vh;
   font-size: 20px;
   color: #726E5F;
   font-family: 'Lora', serif;
@@ -41,3 +41,8 @@
 .btn-theme button:hover {
   color: #96938b;
 } 
+
+.palette-container {
+  border-radius: 30px;
+  margin: 20px;
+}
