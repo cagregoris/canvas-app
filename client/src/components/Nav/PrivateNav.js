@@ -27,6 +27,7 @@ function PrivateNav({setAuth}) {
     e.preventDefault();
 
      localStorage.removeItem("token");
+     localStorage.removeItem("users_id");
 
      setAuth(false);
   }
@@ -44,6 +45,7 @@ function PrivateNav({setAuth}) {
         <Link to="/home" className="nav-bar-link">Home</Link>
         <Link to="/about" className="nav-bar-link">About</Link>
         <Link to="/canvas" className="nav-bar-link">Blank Canvas</Link>
+        <Link to="/gallery" className="nav-bar-link">My Gallery</Link>
       </div>
 
       <div className="nav--right-side-private">

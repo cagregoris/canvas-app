@@ -32,15 +32,14 @@ function Register({setAuth}) {
       });
 
       const parseRes = await response.json();
+      console.log("register parseres", parseRes)
+
 
       if (parseRes.jwtToken) {
         localStorage.setItem("token", parseRes.jwtToken)
+        localStorage.setItem("users_id", parseRes.loggedInId)
   
         setAuth(true)
-
-        toast.success("You are registered!", {
-          icon: "🎨"
-        })
 
       } else {
         setAuth(false);
@@ -59,6 +58,7 @@ function Register({setAuth}) {
 
   return (
     <div className="page-div">
+      <div className="page-layer">
       <h1>REGISTER</h1>
       <form onSubmit={onSubmitForm} >
         <input type="text" name="first_name" placeholder="First Name" value={first_name} onChange={e => onChange(e)} />
@@ -67,6 +67,7 @@ function Register({setAuth}) {
         <input type="password" name="password" placeholder="Password" value={password} onChange={e => onChange(e)} />
         <button>Register</button>
       </form>
+      </div>
     </div>
   )
 }

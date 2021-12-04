@@ -30,10 +30,12 @@ function Login({setAuth}) {
       })
 
       const parseRes = await response.json()
-
+      console.log("login", parseRes)
 
       if (parseRes.jwtToken) {
         localStorage.setItem("token", parseRes.jwtToken)
+        localStorage.setItem("users_id", parseRes.loggedInId)
+        
   
         setAuth(true)
 
@@ -54,12 +56,14 @@ function Login({setAuth}) {
 
   return (
     <div className="page-div">
-      <h1>LOGIN</h1>
-      <form onSubmit={onSubmitForm}>
-        <input type="email" name="email" placeholder="email" value={email} onChange={e => onChange(e)} />
-        <input type="password" name="password" placeholder="password" value={password} onChange={e => onChange(e)} />
-        <button>Login</button>
-      </form>
+      <div className="page-layer">
+        <h1>LOGIN</h1>
+        <form onSubmit={onSubmitForm}>
+          <input type="email" name="email" placeholder="email" value={email} onChange={e => onChange(e)} />
+          <input type="password" name="password" placeholder="password" value={password} onChange={e => onChange(e)} />
+          <button>Login</button>
+        </form>
+      </div>
     </div>
   )
 }

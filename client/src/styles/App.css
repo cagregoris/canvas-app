@@ -39,6 +39,16 @@
 
 .page-div {
   padding-top: 100px;
-  background-color: #EDECE8;
-  height: 100vh;
+  height: 110vh;
+  background-image: url('../leaf.jpg');
+}
+
+.page-layer {
+  background-color: rgba(237,236,232, 0.6);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

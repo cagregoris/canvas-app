@@ -55,6 +55,17 @@ const lineWidth = [
 ]
 
 function EarthCanvas() {
+
+  const [inputs, setInputs] = useState({
+    artwork_name: "",
+  })
+
+  const {artwork_name} = inputs;
+
+  const onChange = (e) => {
+    setInputs({...inputs, [e.target.name] : e.target.value})
+  }
+
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
 
@@ -88,6 +99,7 @@ function EarthCanvas() {
     const link = document.createElement('a');
     link.href = blobURL;
     link.download = "image.png";
+    console.log("link download", link.href)
     link.click();
   }
 
@@ -117,6 +129,39 @@ function EarthCanvas() {
     contextRef.current.strokeStyle = selectedColor;
     contextRef.current.lineWidth = selectedSize;
     contextRef.current.stroke();
+  }
+
+  const onSubmitForm = async(e) => {
+    e.preventDefault()
+
+    try {
+      const imageData = canvasRef.current.toDataURL('image/png');
+
+      const file_data = await (await fetch(imageData)).blob();
+    
+
+    const file_name = URL.createObjectURL(file_data);
+
+    const users_id = JSON.parse(localStorage.getItem('users_id').toString())
+    console.log("user id", users_id)
+
+      const body = {artwork_name, file_name, file_data, users_id}
+
+
+      const response = await fetch("http://localhost:5000/gallery", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"}
+        ,
+        body: JSON.stringify(body)
+      });
+
+      const parseRes = await response.json();
+      console.log("gallery parseres", parseRes)
+
+
+    } catch (err) {
+      console.error(err.message)
+    }
   }
 
   return (
@@ -174,6 +219,14 @@ function EarthCanvas() {
           onPlay={e => console.log("onPlay")}
         />
         </div>
+
+        <div className = "save-art">
+          <form  >
+            <input type="text" name="artwork_name" placeholder="Name of Artwork" value={artwork_name} onChange={e => onChange(e)} />
+            <button onClick={onSubmitForm}>Save</button>
+          </form>
+        </div>
+
       <div>
     </div>
   </div>

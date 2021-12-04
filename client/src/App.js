@@ -19,6 +19,7 @@ import Canvas from './components/Canvases/EarthCanvas';
 import PrivateNav from './components/Nav/PrivateNav';
 import PublicNav from './components/Nav/PublicNav';
 import Container from './components/Canvases/Container';
+import Gallery from './components/Gallery'
 
 // Styles
 import './styles/App.css';
@@ -46,8 +47,6 @@ function App() {
       const parseRes = await response.json();
 
       parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false)
-
-      console.log("token verified?", parseRes)
       
     } catch (err) {
       console.error(err.message);
@@ -75,6 +74,7 @@ function App() {
           <Route exact path = "/login" element = { !isAuthenticated ? (<Login setAuth={setAuth} />) : (<Navigate to="/" />) } />
           <Route exact path = "/register" element = { !isAuthenticated ?  (<Register setAuth={setAuth} />) : (<Navigate to="/" />) } />
           <Route exact path = "/canvas" element = { isAuthenticated ? (<Container setAuth={setAuth} />) : (<Navigate to="/" />) } />
+          <Route exact path = "/gallery" element = { isAuthenticated ? (<Gallery setAuth={setAuth} />) : (<Navigate to="/" />) } />
           <Route exact path = "/about" element = { <About /> } />
           <Route exact path = "/canvas/earth" element = { <EarthCanvas /> } />
           <Route exact path = "/canvas/ocean" element = { <OceanCanvas /> } />

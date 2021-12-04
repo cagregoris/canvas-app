@@ -39,11 +39,14 @@ router.post("/register", validInfo, async (req, res) => {
       [first_name, last_name, email, bcrypPassword]
     );
 
+    
     // 5. Generate our jwt token
-
+    
     const jwtToken = jwtGenerator(newUser.rows[0].user_id);
+    const loggedInId = newUser.rows[0].user_id
+    console.log("register", loggedInId)
 
-    return res.json({ jwtToken });
+    return res.json({ jwtToken, loggedInId });
 
 
   } catch (err) {
@@ -79,6 +82,8 @@ router.post("/login", validInfo, async (req, res) => {
 
     const validPassword = await bcrypt.compare(password, user.rows[0].password)
 
+    const loggedInId = user.rows[0].user_id
+
     if (!validPassword) {
       return res.status(401).json("Email or Password is incorrect")
     }
@@ -87,8 +92,10 @@ router.post("/login", validInfo, async (req, res) => {
     // 4. Give them the jwt token
 
     const jwtToken = jwtGenerator(user.rows[0].user_id);
+    
+    
 
-    return res.json({ jwtToken });
+    return res.json({ jwtToken, loggedInId });
 
 
     
@@ -105,6 +112,7 @@ router.get("/verify", authorize, async (req, res) => {
   try {
 
     res.json(true)
+
     
   } catch (err) {
     console.log(err.message);
