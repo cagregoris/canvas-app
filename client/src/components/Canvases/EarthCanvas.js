@@ -135,18 +135,19 @@ function EarthCanvas() {
     e.preventDefault()
 
     try {
-      const imageData = canvasRef.current.toDataURL('image/png');
+      const file_data = canvasRef.current.toDataURL('image/png');
 
-      const file_data = await (await fetch(imageData)).blob();
+      const imageData = await (await fetch(file_data)).blob();
+      const blobURL = URL.createObjectURL(imageData);
     
 
-    const file_name = URL.createObjectURL(file_data);
-
     const users_id = JSON.parse(localStorage.getItem('users_id').toString())
+    console.log("file data", file_data)
+    console.log("bloburl", blobURL)
     console.log("user id", users_id)
 
-      const body = {artwork_name, file_name, file_data, users_id}
-
+    
+    const body = {artwork_name, file_data, users_id}
 
       const response = await fetch("http://localhost:5000/gallery", {
         method: "POST",
@@ -218,13 +219,6 @@ function EarthCanvas() {
           controls={true}
           onPlay={e => console.log("onPlay")}
         />
-        </div>
-
-        <div className = "save-art">
-          <form  >
-            <input type="text" name="artwork_name" placeholder="Name of Artwork" value={artwork_name} onChange={e => onChange(e)} />
-            <button onClick={onSubmitForm}>Save</button>
-          </form>
         </div>
 
       <div>

@@ -13,7 +13,7 @@ function PublicNav() {
     <div className="nav--left-side">
       <Link to="/home" className="nav-bar-link-logo">MINDFUL ART</Link>
       <Link to="/home" className="nav-bar-link">Home</Link>
-      <Link to="/about" className="nav-bar-link">About</Link>
+      <Link to="/about" className="nav-bar-link">Getting Started</Link>
     </div>
 
     <div className="nav--right-side"

@@ -1,0 +1,62 @@
+.intro--container {
+  height: 100vh;
+  background-image: url('../leaf.jpg');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-div {
+  background-color: #eeece8;
+  font-family: 'Baskervville', serif;
+  color: #726e5f;
+  height: auto;
+}
+
+.page-div p {
+  width: 550px;
+}
+
+.intro--container p {
+  width: 550px;
+  font-size: 22px;
+}
+
+.intro--container span {
+  font-size: 32px;
+}
+
+#use-mouse {
+  font-size: 18px;
+}
+
+.quote--container {
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+.inspiration--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url('../leaf.jpg');
+  font-size: 18px;
+}
+
+.inspiration--container h4 {
+  font-size: 25px;
+}
+
+.tech--container {
+
+}
+
+.how-to--link {
+
+}

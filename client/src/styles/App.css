@@ -37,12 +37,6 @@
   }
 }
 
-.page-div {
-  padding-top: 100px;
-  height: 110vh;
-  background-image: url('../leaf.jpg');
-}
-
 .page-layer {
   background-color: rgba(237,236,232, 0.6);
   height: 100%;
