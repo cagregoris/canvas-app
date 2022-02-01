@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Home() {
   return (
@@ -55,7 +56,7 @@ function Home() {
           </div>
         </div>
         <div className="how-to--link">
-
+          <Link to="/about" style={{ textDecoration: 'none', color: '#726e5f' }}><b>Click</b> here for instructions...</Link>
         </div>
 
     </div>

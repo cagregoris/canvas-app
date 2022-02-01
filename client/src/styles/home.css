@@ -120,3 +120,9 @@
   padding-right: 20px;
   font-size: 50px;
 }
+
+.how-to--link {
+  background-image: url('../leaf.jpg');
+  font-size: 30px;
+  padding: 300px;
+}
