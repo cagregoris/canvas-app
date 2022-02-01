@@ -19,29 +19,39 @@ function Home() {
           <p>I created this app because I wanted to share this ritual with others.</p>
         </div>
         <div className="tech--container">
-          <h4>Technologies Used</h4>
-          <div className="tech--grid">
-            <div className="tech--unit">
-              <span>HTML5</span>
-            </div>
-            <div className="tech--unit">
-              <span>CSS3</span>
-            </div>
-            <div className="tech--unit">
-              <span>Javascript</span>
-            </div>
-            <div className="tech--unit">
-              <span>React</span>
-            </div>
-            <div className="tech--unit">
-              <span>Node.js</span>
-            </div>
-            <div className="tech--unit">
-              <span>Express</span>
+          <div className="tech-title--container">
+            <h4>Technologies Used</h4>
+          </div>
+          <div className="tech-grid--container">
+            <div className="tech--grid">
+              <div className="tech--unit">
+                <i class="fab fa-html5"></i>
+                <span>HTML5</span>
+              </div>
+              <div className="tech--unit">
+                <i class="fab fa-css3"></i>
+                <span>CSS3</span>
+              </div>
+              <div className="tech--unit">
+                <i class="fab fa-js"></i>
+                <span>Javascript</span>
+              </div>
+              <div className="tech--unit">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+              </div>
+              <div className="tech--unit">
+                <i class="fab fa-node"></i>
+                <span>Node.js</span>
+              </div>
+              <div className="tech--unit">
+                <i class="devicon-express-original"></i>
+                <span>Express</span>
+              </div>
             </div>
           </div>
           <div className="github-repo--link">
-            <a>Github Repo</a>
+            <a href="https://github.com/cascobie/canvas-app"><i class="fab fa-github"></i>Github Repo</a>
           </div>
         </div>
         <div className="how-to--link">

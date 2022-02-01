@@ -54,9 +54,69 @@
 }
 
 .tech--container {
-
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-.how-to--link {
+.tech-title--container {
+  font-size: 28px;
+  padding: 50px;
+}
 
+.tech-grid--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech--grid {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 70px;
+  font-size: 20px;
+}
+
+.tech--unit {
+  display: flex;
+  flex-direction: column;
+}
+
+.tech--unit i {
+  font-size: 55px;
+  padding: 20px;
+}
+
+.github-repo--link {
+  border: #726e5f solid 1px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  border-radius: 10px;
+}
+
+.github-repo--link:hover a{
+  color: rgb(133, 131, 125);
+}
+
+.github-repo--link:hover {
+  border: rgb(133, 131, 125) solid 1px;
+}
+
+.github-repo--link a{
+  text-decoration: none;
+  color: #726e5f;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.fa-github {
+  padding-right: 20px;
+  font-size: 50px;
 }
