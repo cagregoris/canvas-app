@@ -19,7 +19,8 @@ import Canvas from './components/Canvases/EarthCanvas';
 import PrivateNav from './components/Nav/PrivateNav';
 import PublicNav from './components/Nav/PublicNav';
 import Container from './components/Canvases/Container';
-import Gallery from './components/Gallery'
+import Gallery from './components/Gallery';
+import Footer from './components/Footer';
 
 // Styles
 import './styles/App.css';
@@ -28,6 +29,7 @@ import './styles/home.css';
 import OceanCanvas from './components/Canvases/OceanCanvas';
 import EarthCanvas from './components/Canvases/EarthCanvas';
 import SkyCanvas from './components/Canvases/SkyCanvas';
+import './styles/footer.css'
 
 function App() {
 
@@ -81,6 +83,7 @@ function App() {
           <Route exact path = "/canvas/sky" element = { <SkyCanvas /> } />
           <Route exact path = "/home" element = { <Home /> } />
         </Routes>
+        <Footer />
       </Router>
       
     </div>
