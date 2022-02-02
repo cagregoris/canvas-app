@@ -30,6 +30,7 @@ import OceanCanvas from './components/Canvases/OceanCanvas';
 import EarthCanvas from './components/Canvases/EarthCanvas';
 import SkyCanvas from './components/Canvases/SkyCanvas';
 import './styles/footer.css'
+import './styles/about.css'
 
 function App() {
 
