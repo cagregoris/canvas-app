@@ -31,6 +31,7 @@ import EarthCanvas from './components/Canvases/EarthCanvas';
 import SkyCanvas from './components/Canvases/SkyCanvas';
 import './styles/footer.css'
 import './styles/about.css'
+import './styles/register.css'
 
 function App() {
 

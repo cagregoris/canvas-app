@@ -58,15 +58,14 @@ function Register({setAuth}) {
 
   return (
     <div className="page-div">
-      <div className="page-layer">
-      <h1>REGISTER</h1>
-      <form onSubmit={onSubmitForm} >
-        <input type="text" name="first_name" placeholder="First Name" value={first_name} onChange={e => onChange(e)} />
-        <input type="text" name="last_name" placeholder="Last Name" value={last_name} onChange={e => onChange(e)} />
-        <input type="email" name="email" placeholder="Email" value={email} onChange={e => onChange(e)} />
-        <input type="password" name="password" placeholder="Password" value={password} onChange={e => onChange(e)} />
-        <button>Register</button>
-      </form>
+      <div className="register-form--container">
+        <form onSubmit={onSubmitForm} >
+          <input type="text" name="first_name" placeholder="First Name" value={first_name} onChange={e => onChange(e)} />
+          <input type="text" name="last_name" placeholder="Last Name" value={last_name} onChange={e => onChange(e)} />
+          <input type="email" name="email" placeholder="Email" value={email} onChange={e => onChange(e)} />
+          <input type="password" name="password" placeholder="Password" value={password} onChange={e => onChange(e)} />
+          <button>Register</button>
+        </form>
       </div>
     </div>
   )
