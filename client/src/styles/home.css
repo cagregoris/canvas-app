@@ -58,11 +58,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding: 50px;
 }
 
 .tech-title--container {
   font-size: 28px;
-  padding: 50px;
 }
 
 .tech-grid--container {
@@ -120,6 +120,56 @@
   padding-right: 20px;
   font-size: 50px;
 }
+
+
+.nature-radio--container {
+  background-color: #726e5f;
+  color: #eeece8;
+  padding: 30px;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.patreon--link {
+  border: solid 2px #eeece8;
+  border-radius: 10px;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.patreon--link a {
+  text-decoration: none;
+  color: #eeece8;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.patreon--link:hover {
+  border: solid 2px #fffcf7;
+  cursor: pointer;
+}
+
+.patreon--link:hover a{
+  color: #fffcf7;
+}
+
+.nature-radio--container p {
+  width: 50%;
+}
+
+#nature-radio--link {
+  text-decoration: none;
+  color: #eeece8;
+  font-weight: bold;
+  font-size: 25px;
+}
+
 
 .how-to--link {
   background-image: url('../leaf.jpg');

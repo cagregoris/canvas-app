@@ -52,7 +52,15 @@ function Home() {
             </div>
           </div>
           <div className="github-repo--link">
-            <a href="https://github.com/cascobie/canvas-app"><i class="fab fa-github"></i>Github Repo</a>
+            <a href="https://github.com/cascobie/canvas-app" target="_blank"><i class="fab fa-github"></i>Github Repo</a>
+          </div>
+        </div>
+        <div className="nature-radio--container">
+          <p>All the sounds in this app were created by <a href="https://natureradio.org/" target="_blank" id="nature-radio--link">Nature Radio</a></p>
+          <p>Nature Radio is a non-profit organization created to archive and share the natural sounds from the world’s national parks and protected areas.</p>
+          <p>Their work aims to foster an awareness of the natural world, and promote conservation and joy for our Earth’s beautiful and biologically rich places.</p>
+          <div className="patreon--link">
+            <a href="https://www.patreon.com/natureradio?fan_landing=true" target="_blank">Support Nature Radio with a donation on their Patreon</a>
           </div>
         </div>
         <div className="how-to--link">
