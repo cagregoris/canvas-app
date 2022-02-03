@@ -56,13 +56,25 @@ function Login({setAuth}) {
 
   return (
     <div className="page-div">
-      <div className="page-layer">
-        <h1>LOGIN</h1>
-        <form onSubmit={onSubmitForm}>
-          <input type="email" name="email" placeholder="email" value={email} onChange={e => onChange(e)} />
-          <input type="password" name="password" placeholder="password" value={password} onChange={e => onChange(e)} />
-          <button>Login</button>
-        </form>
+      <div className="login-form--container">
+
+      <header class="user__header">
+          <h2>Welcome back!</h2>
+        </header>
+
+        <div className="form--div" id="login--form-div">
+
+          <form autoComplete="off" onSubmit={onSubmitForm} className="form">
+            <div className="form__group">
+              <input type="email" name="email" placeholder="email" value={email} onChange={e => onChange(e)} className="form__input"/>
+            </div>
+
+            <div className="form__group">
+              <input type="password" name="password" placeholder="password" value={password} onChange={e => onChange(e)} className="form__input"/>
+            </div>
+            <button className="btn">Login</button>
+          </form>
+        </div>
       </div>
     </div>
   )

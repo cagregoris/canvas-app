@@ -1,0 +1,57 @@
+.register-form--container {
+ padding-top: 100px;
+}
+
+.user__header h2 {
+  font-size: 32px;
+}
+
+.form--div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+}
+
+.form {
+  margin-top: 40px;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 30%;
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  border: 0;
+  outline: 0;
+  transition: 0.3s;
+  background-color: #eeece8;
+  font-family: 'Baskervville', serif;
+  font-size: 15px;
+}
+
+.form__input:focus {
+      background-color: #e6e3dd;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    outline: 0;
+    border: 0;
+    color: #fcfcfc;
+    transition: 0.3s;
+    background-color: #ABA194;
+    font-family: 'Baskervville', serif;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+    .btn:hover {
+      background-color: #9c9386;
+    }
+
+  

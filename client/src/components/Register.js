@@ -59,13 +59,34 @@ function Register({setAuth}) {
   return (
     <div className="page-div">
       <div className="register-form--container">
-        <form onSubmit={onSubmitForm} >
-          <input type="text" name="first_name" placeholder="First Name" value={first_name} onChange={e => onChange(e)} />
-          <input type="text" name="last_name" placeholder="Last Name" value={last_name} onChange={e => onChange(e)} />
-          <input type="email" name="email" placeholder="Email" value={email} onChange={e => onChange(e)} />
-          <input type="password" name="password" placeholder="Password" value={password} onChange={e => onChange(e)} />
-          <button>Register</button>
+
+        <header class="user__header">
+          <h2>Create an Artist Account</h2>
+          <span>*note: the email provided does not have to be a valid email, it just has to be in correct email format - example@example.com. You don't have to provide your real email :)</span>
+        </header>
+
+        <div className="form--div">
+        <form onSubmit={onSubmitForm} className="form">
+          <div className="form__group">
+            <input autoComplete="none" type="text" name="first_name" placeholder="First Name" value={first_name} onChange={e => onChange(e)} className="form__input"/>
+          </div>
+
+          <div className="form__group">
+            <input autoComplete="none" type="text" name="last_name" placeholder="Last Name" value={last_name} onChange={e => onChange(e)} className="form__input"/>
+          </div>
+
+          <div className="form__group">
+            <input autoComplete="none" type="email" name="email" placeholder="Email" value={email} onChange={e => onChange(e)} className="form__input"/>
+          </div>
+
+          <div className="form__group">
+            <input autoComplete="none" type="password" name="password" placeholder="Password" value={password} onChange={e => onChange(e)} className="form__input"/>
+          </div>
+          <button className="btn">Register</button>
         </form>
+        </div>
+
+
       </div>
     </div>
   )

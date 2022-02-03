@@ -32,6 +32,7 @@ import SkyCanvas from './components/Canvases/SkyCanvas';
 import './styles/footer.css'
 import './styles/about.css'
 import './styles/register.css'
+import './styles/login.css'
 
 function App() {
 

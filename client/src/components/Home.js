@@ -66,7 +66,6 @@ function Home() {
         <div className="how-to--link">
           <Link to="/about" style={{ textDecoration: 'none', color: '#726e5f' }}><b>Click</b> here for instructions...</Link>
         </div>
-
     </div>
   )
 }
